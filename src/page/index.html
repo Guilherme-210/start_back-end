@@ -274,6 +274,205 @@ code_text">fetch("https://api.exemplo.com/usuarios/1", {
           </table>
         </div>
       </fieldset>
+
+      <fieldset>
+        <legend>🏷 Tipos de Parâmetros em Requisições HTTP</legend>
+        <p>
+          Quando fazemos requisições para APIs, precisamos passar informações
+          para o servidor. Existem três formas principais de enviar esses dados:
+        </p>
+        <details>
+          <summary>📜 1. Query Params (Parâmetros de Consulta)</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>
+              Passados na <strong>URL</strong> após o <code>?</code> e separados
+              por <code>&</code>.
+            </li>
+            <li>
+              Usados para <strong>filtrar</strong>, <strong>ordenar</strong> ou
+              <strong>paginar</strong> resultados
+            </li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios?idade=25&cidade=São Paulo")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Erro:", error));</code></pre>
+            </div>
+            <h3>URL gerada:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">arduino</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">https://api.exemplo.com/usuarios?idade=25&cidade=São Paulo</code></pre>
+            </div>
+          </div>
+          <h4>💡 Usado para:</h4>
+          <ul class="list_check">
+            <li>Filtros em listas (ex: buscar usuários com idade 25).</li>
+            <li>Paginação (?pagina=2&limite=10).</li>
+            <li>Ordenação (?sort=asc).</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>📜 2. Route Params (Parâmetros de Rota)</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>Fazem parte da <strong>URL</strong>, sem <code>?</code>.</li>
+            <li>
+              Usados para identificar <strong>um recurso específico</strong>.
+            </li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios/123")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Erro:", error));</code></pre>
+            </div>
+            <h3>URL gerada:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">https://api.exemplo.com/usuarios/123</code></pre>
+            </div>
+          </div>
+          <h4>💡 Usado para:</h4>
+          <ul class="list_check">
+            <li>Buscar um usuário específico (/usuarios/123).</li>
+            <li>Atualizar ou deletar um item (/produtos/45)</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>📜 3. Request Body (Corpo da Requisição)</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>
+              <strong>Não vai na URL</strong>! É enviado no
+              <strong>corpo da requisição</strong>.
+            </li>
+            <li>
+              Usado para <strong>enviar dados complexos</strong>, como JSON.
+            </li>
+            <li>
+              Exige métodos como <code>POST</code>, <code>PUT</code> ou
+              <code>PATCH</code>.
+            </li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script,js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    nome: "João",
+    email: "joao@email.com",
+    idade: 25
+  })
+})
+.then(response => response.json())
+.then(data => console.log("Usuário criado:", data))
+.catch(error => console.error("Erro:", error));</code></pre>
+            </div>
+            <h3>JSON enviado no body:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">json</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">{
+  "nome": "João",
+  "email": "joao@email.com",
+  "idade": 25
+}</code></pre>
+            </div>
+          </div>
+          <h4>💡 Usado para:</h4>
+          <ul class="list_check">
+            <li>Criar usuários, enviar formulários, atualizar informações</li>
+          </ul>
+        </details>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend></legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo de Parâmetro</th>
+                <th>Onde fica?</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Query Params</strong></td>
+                <td>Na URL após <code>?</code></td>
+                <td><code>/usuarios?idade=25&amp;cidade=SP</code></td>
+              </tr>
+              <tr>
+                <td><strong>Route Params</strong></td>
+                <td>Dentro da URL</td>
+                <td><code>/usuarios/123</code></td>
+              </tr>
+              <tr>
+                <td><strong>Request Body</strong></td>
+                <td>No corpo da requisição</td>
+                <td>
+                  <code>{ "nome": "João", "email": "joao@email.com" }</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
     </main>
 
     <footer>
