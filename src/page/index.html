@@ -72,17 +72,20 @@
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Erro ao buscar usuários:", error));</code></pre>
+code_text">const express = require("express")
+
+const app = express()
+
+app.get("/projects", (request, response) => {
+  return response.json(["projeto 1", "projeto 2"])
+})</code></pre>
             </div>
           </div>
           <h4>💡 Usado para:</h4>
@@ -103,21 +106,16 @@ code_text">fetch("https://api.exemplo.com/usuarios")
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ nome: "João", email: "joao@email.com" })
-})
-.then(response => response.json())
-.then(data => console.log("Usuário criado:", data))
-.catch(error => console.error("Erro ao criar usuário:", error));</code></pre>
+code_text">app.post("/projects", (request, response) => {
+  return response.json(["projeto 1", "projeto 2", "projeto 3"])
+})</code></pre>
             </div>
             <h4>💡 Usado para:</h4>
             <ul class="list_check">
@@ -140,21 +138,16 @@ code_text">fetch("https://api.exemplo.com/usuarios", {
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios/1", {
-  method: "PUT",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ nome: "João Silva", email: "joaosilva@email.com" })
-})
-.then(response => response.json())
-.then(data => console.log("Usuário atualizado:", data))
-.catch(error => console.error("Erro ao atualizar usuário:", error));</code></pre>
+code_text">app.put("/projects/:id", (request, response) => {
+  return response.json(["projeto 1", "projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
             </div>
             <h4>💡 Usado para:</h4>
             <ul class="list_check">
@@ -179,21 +172,16 @@ code_text">fetch("https://api.exemplo.com/usuarios/1", {
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios/1", {
-  method: "PATCH",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ email: "novoemail@email.com" })
-})
-.then(response => response.json())
-.then(data => console.log("E-mail atualizado:", data))
-.catch(error => console.error("Erro ao atualizar e-mail:", error));</code></pre>
+code_text">app.patch("/projects/:id", (request, response) => {
+  return response.json(["projeto 1", "projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
             </div>
             <h4>💡 Usado para:</h4>
             <ul class="list_check">
@@ -215,18 +203,16 @@ code_text">fetch("https://api.exemplo.com/usuarios/1", {
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios/1", {
-  method: "DELETE"
-})
-.then(() => console.log("Usuário deletado!"))
-.catch(error => console.error("Erro ao deletar usuário:", error));</code></pre>
+code_text">app.delete("/projects/:id", (request, response) => {
+  return response.json(["projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
             </div>
             <h4>💡 Usado para:</h4>
             <ul class="list_check">
@@ -298,17 +284,21 @@ code_text">fetch("https://api.exemplo.com/usuarios/1", {
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios?idade=25&cidade=São Paulo")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Erro:", error));</code></pre>
+code_text">app.get("/projects", (request, response) => {
+  const { title, owner } = request.query
+
+  console.log(title)
+  console.log(owner)
+
+  return response.json(["projeto 1", "projeto 2"])
+})</code></pre>
             </div>
             <h3>URL gerada:</h3>
             <div class="code_container">
@@ -320,14 +310,13 @@ code_text">fetch("https://api.exemplo.com/usuarios?idade=25&cidade=São Paulo")
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">https://api.exemplo.com/usuarios?idade=25&cidade=São Paulo</code></pre>
+code_text">http://localhost:3333/projects?title=React&owner=Guilherme</code></pre>
             </div>
           </div>
           <h4>💡 Usado para:</h4>
           <ul class="list_check">
-            <li>Filtros em listas (ex: buscar usuários com idade 25).</li>
-            <li>Paginação (?pagina=2&limite=10).</li>
-            <li>Ordenação (?sort=asc).</li>
+            <li>Filtros em listas (ex: Titulo equivalente a "React").</li>
+            <li>Paginação (?title=React&owner=Guilherme).</li>
           </ul>
         </details>
 
@@ -344,17 +333,24 @@ code_text">https://api.exemplo.com/usuarios?idade=25&cidade=São Paulo</code></p
           <div class="div_details">
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">script.js</span>
+                <span class="code_title">index.js</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios/123")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Erro:", error));</code></pre>
+code_text">app.put("/projects/:id", (request, response) => {
+  // const params = request.params
+  // console.log(params)
+  // { id: '1' }
+
+  const { id } = request.params
+  console.log(id)
+  // 1
+
+  return response.json(["projeto 1", "projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
             </div>
             <h3>URL gerada:</h3>
             <div class="code_container">
@@ -366,13 +362,12 @@ code_text">fetch("https://api.exemplo.com/usuarios/123")
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">https://api.exemplo.com/usuarios/123</code></pre>
+code_text">http://localhost:3333/projects/1?</code></pre>
             </div>
           </div>
           <h4>💡 Usado para:</h4>
           <ul class="list_check">
-            <li>Buscar um usuário específico (/usuarios/123).</li>
-            <li>Atualizar ou deletar um item (/produtos/45)</li>
+            <li>Buscar uma rota específica (/projects/1).</li>
           </ul>
         </details>
 
@@ -394,6 +389,8 @@ code_text">https://api.exemplo.com/usuarios/123</code></pre>
           </ul>
           <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <p>Por padrão o <strong>express</strong> não interpreta o que vai ser enviado para ele no formato json. Então para falarmos para o <strong>express</strong> que a nossa <strong>API</strong> vai receber dados no formato de json, so precisamos adicionar <code>app.use(express.json())</code>.</p>
+            <p>⚠️ <strong>sempre antes da chamada das rotas</strong> e logo apos da definição da variavel <code>app</code>!</p>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">script,js</span>
@@ -403,23 +400,20 @@ code_text">https://api.exemplo.com/usuarios/123</code></pre>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">fetch("https://api.exemplo.com/usuarios", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    nome: "João",
-    email: "joao@email.com",
-    idade: 25
-  })
-})
-.then(response => response.json())
-.then(data => console.log("Usuário criado:", data))
-.catch(error => console.error("Erro:", error));</code></pre>
+code_text">app.use(express.json())
+
+app.post("/projects", (request, response) => {
+  const body = request.body
+  
+  console.log(body)
+
+  return response.json(["projeto 1", "projeto 2", "projeto 3"])
+})</code></pre>
             </div>
             <h3>JSON enviado no body:</h3>
             <div class="code_container">
               <div class="code_header">
-                <span class="code_title">json</span>
+                <span class="code_title">Body => JSON</span>
                 <div class="code_actions">
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
@@ -427,9 +421,9 @@ code_text">fetch("https://api.exemplo.com/usuarios", {
               </div>
               <pre class="code_block"><code id="
 code_text">{
-  "nome": "João",
-  "email": "joao@email.com",
-  "idade": 25
+  "nome": "Guilherme",
+  "email": "guilherme@email.com",
+  "idade": 27
 }</code></pre>
             </div>
           </div>
@@ -447,27 +441,47 @@ code_text">{
             <thead>
               <tr>
                 <th>Tipo de Parâmetro</th>
-                <th>Onde fica?</th>
+                <th>Onde Fica?</th>
                 <th>Exemplo</th>
+                <th>Usado Para</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Query Params</strong></td>
-                <td>Na URL após <code>?</code></td>
-                <td><code>/usuarios?idade=25&amp;cidade=SP</code></td>
+                <td>URL após <code>?</code></td>
+                <td><code>/usuarios?idade=25</code></td>
+                <td>Filtros, paginação</td>
               </tr>
               <tr>
                 <td><strong>Route Params</strong></td>
-                <td>Dentro da URL</td>
+                <td>Na URL</td>
                 <td><code>/usuarios/123</code></td>
+                <td>Identificar um recurso</td>
               </tr>
               <tr>
                 <td><strong>Request Body</strong></td>
                 <td>No corpo da requisição</td>
-                <td>
-                  <code>{ "nome": "João", "email": "joao@email.com" }</code>
-                </td>
+                <td><code>{ "nome": "João" }</code></td>
+                <td>Criar ou atualizar dados</td>
+              </tr>
+              <tr>
+                <td><strong>Header Params</strong></td>
+                <td>No cabeçalho da requisição</td>
+                <td><code>"Authorization": "Bearer token123"</code></td>
+                <td>Autenticação, metadados</td>
+              </tr>
+              <tr>
+                <td><strong>Path Params</strong></td>
+                <td>Na URL, dentro de uma hierarquia</td>
+                <td><code>/lojas/15/produtos/200</code></td>
+                <td>Recursos dentro de categorias</td>
+              </tr>
+              <tr>
+                <td><strong>Form Data</strong></td>
+                <td>No corpo da requisição</td>
+                <td><code>formData.append("foto", file)</code></td>
+                <td>Upload de arquivos</td>
               </tr>
             </tbody>
           </table>
