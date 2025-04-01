@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title></title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1></h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <div class="quote-container">
+          <blockquote class="quote"></blockquote>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>🌐 Métodos HTTP: Entendendo as Requisições na Web</legend>
+        <p>
+          Quando navegamos na internet ou interagimos com <strong>APIs</strong>,
+          usamos os métodos <strong>HTTP</strong> para comunicar com o back-end.
+          Cada método tem um propósito específico e define a ação que queremos
+          executar no servidor.
+        </p>
+        <p>Aqui está um resumo dos principais métodos <strong>HTTP</strong>:</p>
+        <details>
+          <summary>📜 1. GET - Buscar Informações</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>Solicita dados do servidor, mas não altera nada.</li>
+            <li>Como abrir um site ou buscar dados de uma API.</li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Erro ao buscar usuários:", error));</code></pre>
+            </div>
+          </div>
+          <h4>💡 Usado para:</h4>
+          <ul class="list_check">
+            <li>Consultar listas de usuários, produtos, artigos etc.</li>
+            <li>Buscar informações sem modificar nada no servidor.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>📜 2. POST - Criar um Novo Registro</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>Envia dados para o servidor para criar um novo recurso.</li>
+            <li>Diferente do GET, pode modificar os dados no servidor.</li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ nome: "João", email: "joao@email.com" })
+})
+.then(response => response.json())
+.then(data => console.log("Usuário criado:", data))
+.catch(error => console.error("Erro ao criar usuário:", error));</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Criar contas de usuário, posts em um blog, adicionar itens em um
+                banco de dados.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>📜 3. PUT - Atualizar um Registro (Completo)</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>Atualiza toda a informação de um recurso existente.</li>
+            <li>Se algum campo estiver ausente, ele pode ser apagado</li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios/1", {
+  method: "PUT",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ nome: "João Silva", email: "joaosilva@email.com" })
+})
+.then(response => response.json())
+.then(data => console.log("Usuário atualizado:", data))
+.catch(error => console.error("Erro ao atualizar usuário:", error));</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Substituir completamente os dados de um usuário, produto, post
+                etc.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>📜 4. PATCH - Atualizar um Registro (Parcial)</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>Atualiza apenas campos específicos de um recurso.</li>
+            <li>
+              Diferente do PUT, os campos não enviados continuam inalterados
+            </li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios/1", {
+  method: "PATCH",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email: "novoemail@email.com" })
+})
+.then(response => response.json())
+.then(data => console.log("E-mail atualizado:", data))
+.catch(error => console.error("Erro ao atualizar e-mail:", error));</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Atualizar somente um campo, como mudar a senha ou e-mail de um
+                usuário.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>📜 5. DELETE - Apagar um Registro</summary>
+          <h4>📌 O que faz?</h4>
+          <ul>
+            <li>Remove um recurso do servidor permanentemente.</li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/usuarios/1", {
+  method: "DELETE"
+})
+.then(() => console.log("Usuário deletado!"))
+.catch(error => console.error("Erro ao deletar usuário:", error));</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Apagar um usuário, remover um produto do catálogo, deletar um
+                post etc.
+              </li>
+            </ul>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GET</td>
+                <td>🔍 Buscar informações (sem modificar nada)</td>
+              </tr>
+              <tr>
+                <td>POST</td>
+                <td>➕ Criar um novo recurso</td>
+              </tr>
+              <tr>
+                <td>PUT</td>
+                <td>💾 Atualizar um recurso por completo</td>
+              </tr>
+              <tr>
+                <td>PATCH</td>
+                <td>🛠️ Atualizar apenas um campo</td>
+              </tr>
+              <tr>
+                <td>DELETE</td>
+                <td>🗑️ Deletar um recurso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="openDetails.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
