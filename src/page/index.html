@@ -61,8 +61,9 @@
           executar no servidor.
         </p>
         <p>Aqui está um resumo dos principais métodos <strong>HTTP</strong>:</p>
+
         <details>
-          <summary>📜 1. GET - Buscar Informações</summary>
+          <summary>1. GET - Buscar Informações</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>Solicita dados do servidor, mas não altera nada.</li>
@@ -96,7 +97,7 @@ app.get("/projects", (request, response) => {
         </details>
 
         <details>
-          <summary>📜 2. POST - Criar um Novo Registro</summary>
+          <summary>2. POST - Criar um Novo Registro</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>Envia dados para o servidor para criar um novo recurso.</li>
@@ -128,7 +129,7 @@ code_text">app.post("/projects", (request, response) => {
         </details>
 
         <details>
-          <summary>📜 3. PUT - Atualizar um Registro (Completo)</summary>
+          <summary>3. PUT - Atualizar um Registro (Completo)</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>Atualiza toda a informação de um recurso existente.</li>
@@ -160,7 +161,7 @@ code_text">app.put("/projects/:id", (request, response) => {
         </details>
 
         <details>
-          <summary>📜 4. PATCH - Atualizar um Registro (Parcial)</summary>
+          <summary>4. PATCH - Atualizar um Registro (Parcial)</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>Atualiza apenas campos específicos de um recurso.</li>
@@ -194,7 +195,7 @@ code_text">app.patch("/projects/:id", (request, response) => {
         </details>
 
         <details>
-          <summary>📜 5. DELETE - Apagar um Registro</summary>
+          <summary>5. DELETE - Apagar um Registro</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>Remove um recurso do servidor permanentemente.</li>
@@ -237,23 +238,23 @@ code_text">app.delete("/projects/:id", (request, response) => {
             </thead>
             <tbody>
               <tr>
-                <td>GET</td>
+                <td><strong>GET</strong></td>
                 <td>🔍 Buscar informações (sem modificar nada)</td>
               </tr>
               <tr>
-                <td>POST</td>
+                <td><strong>POST</strong></td>
                 <td>➕ Criar um novo recurso</td>
               </tr>
               <tr>
-                <td>PUT</td>
+                <td><strong>PUT</strong></td>
                 <td>💾 Atualizar um recurso por completo</td>
               </tr>
               <tr>
-                <td>PATCH</td>
+                <td><strong>PATCH</strong></td>
                 <td>🛠️ Atualizar apenas um campo</td>
               </tr>
               <tr>
-                <td>DELETE</td>
+                <td><strong>DELETE</strong></td>
                 <td>🗑️ Deletar um recurso</td>
               </tr>
             </tbody>
@@ -267,8 +268,9 @@ code_text">app.delete("/projects/:id", (request, response) => {
           Quando fazemos requisições para APIs, precisamos passar informações
           para o servidor. Existem três formas principais de enviar esses dados:
         </p>
+
         <details>
-          <summary>📜 1. Query Params (Parâmetros de Consulta)</summary>
+          <summary>1. Query Params (Parâmetros de Consulta)</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>
@@ -321,7 +323,7 @@ code_text">http://localhost:3333/projects?title=React&owner=Guilherme</code></pr
         </details>
 
         <details>
-          <summary>📜 2. Route Params (Parâmetros de Rota)</summary>
+          <summary>2. Route Params (Parâmetros de Rota)</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>Fazem parte da <strong>URL</strong>, sem <code>?</code>.</li>
@@ -372,7 +374,7 @@ code_text">http://localhost:3333/projects/1?</code></pre>
         </details>
 
         <details>
-          <summary>📜 3. Request Body (Corpo da Requisição)</summary>
+          <summary>3. Request Body (Corpo da Requisição)</summary>
           <h4>📌 O que faz?</h4>
           <ul>
             <li>
@@ -389,8 +391,17 @@ code_text">http://localhost:3333/projects/1?</code></pre>
           </ul>
           <h4>📌 Exemplo:</h4>
           <div class="div_details">
-            <p>Por padrão o <strong>express</strong> não interpreta o que vai ser enviado para ele no formato json. Então para falarmos para o <strong>express</strong> que a nossa <strong>API</strong> vai receber dados no formato de json, so precisamos adicionar <code>app.use(express.json())</code>.</p>
-            <p>⚠️ <strong>sempre antes da chamada das rotas</strong> e logo apos da definição da variavel <code>app</code>!</p>
+            <p>
+              Por padrão o <strong>express</strong> não interpreta o que vai ser
+              enviado para ele no formato json. Então para falarmos para o
+              <strong>express</strong> que a nossa <strong>API</strong> vai
+              receber dados no formato de json, so precisamos adicionar
+              <code>app.use(express.json())</code>.
+            </p>
+            <p>
+              ⚠️ <strong>sempre antes da chamada das rotas</strong> e logo apos
+              da definição da variavel <code>app</code>!
+            </p>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">script,js</span>
@@ -435,7 +446,7 @@ code_text">{
       </fieldset>
 
       <fieldset class="fieldset_table">
-        <legend></legend>
+        <legend>🚀 Conclusão</legend>
         <div class="div_table">
           <table>
             <thead>
@@ -482,6 +493,209 @@ code_text">{
                 <td>No corpo da requisição</td>
                 <td><code>formData.append("foto", file)</code></td>
                 <td>Upload de arquivos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>🛑 Middleware: O Interceptador de Requisições 🛑</legend>
+        <p>
+          O <strong>middleware</strong> é como um segurança que fica no meio do
+          caminho entre a requisição do cliente e a resposta do servidor. Ele
+          pode <strong>modificar</strong>, <strong>bloquear</strong> ou
+          <strong>encaminhar</strong> a requisição antes que ela chegue ao
+          destino final.
+        </p>
+
+        <details>
+          <summary>O que é um Middleware?</summary>
+          <h4>📌 Definição:</h4>
+          <p>
+            Um <strong>middleware</strong> é uma função que
+            <strong>intercepta</strong> a requisição antes dela chegar à rota
+            final. Ele pode:
+          </p>
+          <ul>
+            <li>Modificar a requisição ou resposta.</li>
+            <li>Bloquear o acesso caso não cumpra algum critério.</li>
+            <li>Registrar logs e métricas.</li>
+            <li>Adicionar informações extras na requisição</li>
+          </ul>
+          <h4>📌 Fluxo da Requisição com Middleware:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre
+                class="code_block"
+              >[ Cliente ] → [ Middleware 1 ] → [ Middleware 2 ] → [ Rota Final ]<code id="
+code_text"></code></pre>
+            </div>
+          </div>
+          <h3>📜 Exemplo de Middleware no Express.js</h3>
+          <h4>📌 Criando um middleware que loga todas as requisições:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">const express = require("express");
+const app = express();
+
+// Middleware que exibe informações da requisição
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next(); // Chama o próximo middleware ou rota
+});
+
+// Rota de exemplo
+app.get("/", (req, res) => {
+  res.send("Middleware funcionando!");
+});
+
+app.listen(3000, () => console.log("Servidor rodando na porta 3000"));</code></pre>
+            </div>
+          </div>
+          <h4>💡 O que acontece aqui?</h4>
+          <ul class="list_check">
+            <li>
+              Toda requisição <strong>passa primeiro pelo middleware</strong>.
+            </li>
+            <li>
+              Ele exibe a data, método (<code>GET</code>, <code>POST</code>,
+              etc.) e URL da requisição.
+            </li>
+            <li>
+              Depois, o <code>next()</code> permite que a requisição continue
+              até a rota final.
+            </li>
+          </ul>
+        </details>
+
+        <h3>📜 Tipos de Middleware</h3>
+        <p>
+          Os middlewares podem ter diferentes funções, dependendo do que
+          queremos fazer:
+        </p>
+
+        <details>
+          <summary>1. Middleware Global</summary>
+          <ul>
+            <li>Aplica-se a todas as requisições.</li>
+            <li>Exemplo: Registro de logs, CORS, parsing de JSON.</li>
+          </ul>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.use(express.json()); // Middleware para interpretar JSON</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>2. Middleware de Rota Específica</summary>
+          <ul>
+            <li>Funciona apenas em determinadas rotas.</li>
+            <li>Exemplo: Autenticação antes de acessar uma área restrita.</li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">const checkAuth = (req, res, next) => {
+  if (!req.headers.authorization) {
+    return res.status(401).json({ error: "Acesso negado!" });
+  }
+  next();
+};
+
+app.get("/admin", checkAuth, (req, res) => {
+  res.send("Bem-vindo à área administrativa!");
+});</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>3. Middleware de Tratamento de Erros</summary>
+          <ul>
+            <li>Captura e lida com erros nas requisições.</li>
+            <li>Deve ter quatro parâmetros (err, req, res, next).</li>
+          </ul>
+          <h4>📌 Exemplo:</h4>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Algo deu errado!");
+});</code></pre>
+            </div>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Exemplo de Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Global</strong></td>
+                <td>Aplica-se a todas as requisições</td>
+                <td><code>app.use(express.json())</code></td>
+              </tr>
+              <tr>
+                <td><strong>Rota Específica</strong></td>
+                <td>Funciona apenas em algumas rotas</td>
+                <td><code>app.get("/admin", checkAuth, ...)</code></td>
+              </tr>
+              <tr>
+                <td><strong>Erro</strong></td>
+                <td>Trata erros na aplicação</td>
+                <td>
+                  <code>app.use((err, req, res, next) =&gt; { ... })</code>
+                </td>
               </tr>
             </tbody>
           </table>

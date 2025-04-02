@@ -143,8 +143,6 @@ h4 {
   font-size: var(--font-size-medium);
 }
 
-
-
 /* estilizando o toggle-Thema */
 .toggle_Theme {
   margin: var(--margin-small);
@@ -204,6 +202,18 @@ summary {
   color: var(--code-color);
   margin: 0.5rem;
 }
+summary::marker {
+  content: "📕 ";
+  float: left;
+  font-weight: bold;
+  padding: 0;
+  text-align: center;
+  font-size: large;
+}
+details[open] summary::marker {
+  content: "📖 ";
+}
+
 /* Estilizando as listas */
 ol {
   list-style: decimal;
@@ -224,7 +234,7 @@ ul {
 }
 ol,
 ul {
-  margin: .5rem 2.5rem;
+  margin: 0.5rem 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -307,51 +317,51 @@ tbody tr:nth-child(even) {
 
 /* Contêiner do bloco de código */
 .code_container {
-    width: 100%;
-    background-color: var(--details-background-color, #333);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  background-color: var(--details-background-color, #333);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Cabeçalho */
 .code_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
 }
 
 /* Título */
 .code_title {
-    font-size: 14px;
-    color: #ccc;
+  font-size: 14px;
+  color: #ccc;
 }
 
 /* Botões */
 .code_actions button {
-    background: none;
-    border: transparent solid 1px;
-    color: #bbb;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 10px;
+  background: none;
+  border: transparent solid 1px;
+  color: #bbb;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 .code_actions button:hover {
-    color: white;
+  color: white;
 }
 
 /* Bloco de código */
 .code_block {
-    background-color: var(--code-background-color, #282c34);
-    color: var(--code-color, #00ff00);
-    padding: 15px;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 16px;
-    white-space: pre-wrap;
-    border-radius: 0 0 8px 8px;
+  background-color: var(--code-background-color, #282c34);
+  color: var(--code-color, #00ff00);
+  padding: 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  white-space: pre-wrap;
+  border-radius: 0 0 8px 8px;
 }
 /* estilização do fieldset - pre & code */
 /* pre, */
