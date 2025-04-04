@@ -17,14 +17,14 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style/css/reset.css" />
+    <link rel="stylesheet" href="../style/css/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
       href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
     />
-    <title></title>
+    <title>Back-end com NodeJS</title>
   </head>
   <body data-theme="dark">
     <header>
@@ -34,7 +34,7 @@
         <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
       </nav>
 
-      <h1></h1>
+      <h1>Back-end com NodeJS</h1>
       <!-- Alternar Tema -->
       <div>
         <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
@@ -44,11 +44,28 @@
     </header>
 
     <main>
-      <fieldset>
-        <legend></legend>
-        <p></p>
-        <div class="quote-container">
-          <blockquote class="quote"></blockquote>
+      <fieldset class="fieldset_explications">
+        <legend>Conceito de Node.js e API REST</legend>
+        <div class="div_fieldset">
+        <p>🟩 Node.js</p>
+        <p>Node.js é uma ferramenta que permite rodar JavaScript no servidor.</p>
+        <p>Com ele, você cria back-end, APIs, sistemas em tempo real, e muito mais.</p>
+        <ol class="list_check">
+          <li>Permite rodar JS fora do navegador.</li>
+          <li>Ideal pra criar servidores, APIs e apps rápidos.</li>
+          <li>Usa o motor V8 do Chrome por baixo dos panos.</li>
+        </ol>
+        </div>
+
+        <div class="div_fieldset">
+        <p>🌐 API REST</p>
+        <p>API REST é um jeito de criar rotas para sistemas conversarem entre si.</p>
+        <p>Usa métodos HTTP como GET, POST, PUT e DELETE pra manipular dados.</p>
+        <ol class="list_check">
+          <li>Usa os métodos HTTP (GET, POST, PUT, DELETE...).</li>
+          <li>Baseada em recursos (ex: /usuarios, /produtos).</li>
+          <li>Toda comunicação rola via JSON, normalmente.</li>
+        </ol>
         </div>
       </fieldset>
 
@@ -840,7 +857,7 @@ code_text">app.use((err, req, res, next) => {
       </p>
     </footer>
 
-    <script src="openDetails.js"></script>
-    <script src="toggleTheme.js"></script>
+    <script src="../style/js/openDetails.js"></script>
+    <script src="../style/js/toggleTheme.js"></script>
   </body>
 </html>

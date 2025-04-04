@@ -45,6 +45,7 @@
   --code-border-color: #929090;
   --code-color: #007bff;
   --strong-code-color: #007bff;
+  --border-color-quote: #000;
 
   --thead-background-color: #dedfe0;
   --tbody-background-color: #cfcdcd;
@@ -75,6 +76,7 @@
   --code-border-color: #3e4451;
   --code-color: #00ff00;
   --strong-code-color: #00ff00;
+  --border-color-quote: #fff;
 
   --thead-background-color: #212529;
   --tbody-background-color: #282c34;
@@ -165,9 +167,23 @@ fieldset {
   border-radius: var(--border-radius-medium);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   color: var(--font-color);
-  padding: var(--padding-medium);
+  padding: var(--padding-medium) var(--padding-large);
   margin-bottom: 20px;
   gap: var(--margin-small);
+}
+
+.fieldset_explications {
+  display: flex;
+  flex-direction: row;
+  gap: var(--margin-small);
+}
+.div_fieldset {
+  width: 50%;
+  padding-left: 10px;
+  border-left: 2px solid Var(--border-color-quote);
+}
+.div_fieldset ol {
+  margin: 1rem 1.8rem;
 }
 
 /* estilização do fieldset - legend */
@@ -236,7 +252,7 @@ ul {
 }
 ol,
 ul {
-  margin: 0.6rem 2.5rem;
+  margin: 0.6rem 0 0.6rem 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
