@@ -47,25 +47,35 @@
       <fieldset class="fieldset_explications">
         <legend>Conceito de Node.js e API REST</legend>
         <div class="div_fieldset">
-        <p>🟩 Node.js</p>
-        <p>Node.js é uma ferramenta que permite rodar JavaScript no servidor.</p>
-        <p>Com ele, você cria back-end, APIs, sistemas em tempo real, e muito mais.</p>
-        <ol class="list_check">
-          <li>Permite rodar JS fora do navegador.</li>
-          <li>Ideal pra criar servidores, APIs e apps rápidos.</li>
-          <li>Usa o motor V8 do Chrome por baixo dos panos.</li>
-        </ol>
+          <p>🟩 Node.js</p>
+          <p>
+            Node.js é uma ferramenta que permite rodar JavaScript no servidor.
+          </p>
+          <p>
+            Com ele, você cria back-end, APIs, sistemas em tempo real, e muito
+            mais.
+          </p>
+          <ol class="list_check">
+            <li>Permite rodar JS fora do navegador.</li>
+            <li>Ideal pra criar servidores, APIs e apps rápidos.</li>
+            <li>Usa o motor V8 do Chrome por baixo dos panos.</li>
+          </ol>
         </div>
 
         <div class="div_fieldset">
-        <p>🌐 API REST</p>
-        <p>API REST é um jeito de criar rotas para sistemas conversarem entre si.</p>
-        <p>Usa métodos HTTP como GET, POST, PUT e DELETE pra manipular dados.</p>
-        <ol class="list_check">
-          <li>Usa os métodos HTTP (GET, POST, PUT, DELETE...).</li>
-          <li>Baseada em recursos (ex: /usuarios, /produtos).</li>
-          <li>Toda comunicação rola via JSON, normalmente.</li>
-        </ol>
+          <p>🌐 API REST</p>
+          <p>
+            API REST é um jeito de criar rotas para sistemas conversarem entre
+            si.
+          </p>
+          <p>
+            Usa métodos HTTP como GET, POST, PUT e DELETE pra manipular dados.
+          </p>
+          <ol class="list_check">
+            <li>Usa os métodos HTTP (GET, POST, PUT, DELETE...).</li>
+            <li>Baseada em recursos (ex: /usuarios, /produtos).</li>
+            <li>Toda comunicação rola via JSON, normalmente.</li>
+          </ol>
         </div>
       </fieldset>
 
@@ -524,43 +534,45 @@ code_text">{
         <legend>
           <i>🛑</i> Middleware: O Interceptador de Requisições <i>🛑</i>
         </legend>
-        <p>
-          O <strong>middleware</strong> é como um segurança que fica no meio do
-          caminho entre a requisição do cliente e a resposta do servidor.
-        </p>
-        <p>
-          Ele pode <strong>modificar</strong>, <strong>bloquear</strong> ou
-          <strong>encaminhar</strong> a requisição antes que ela chegue ao
-          destino final.
-        </p>
-        <h4>📌 Definição:</h4>
-        <p>
-          Um <strong>middleware</strong> é uma função que
-          <strong>intercepta</strong> a requisição antes dela chegar à rota
-          final. Podendo assim:
-        </p>
-        <ul>
-          <li>Modificar a requisição ou a resposta.</li>
-          <li>Bloquear o acesso caso não cumpra algum critério.</li>
-          <li>Registrar logs e métricas.</li>
-          <li>Adicionar informações extras na requisição</li>
-        </ul>
-        <p>
-          Ele e utilizada principalmente quando houver a nessecidade de executar
-          um mesmo trexo de código em multiplas rotas.
-        </p>
+        <div>
+          <p>
+            O <strong>middleware</strong> é como um segurança que fica no meio
+            do caminho entre a requisição do cliente e a resposta do servidor.
+          </p>
+          <p>
+            Ele pode <strong>modificar</strong>, <strong>bloquear</strong> ou
+            <strong>encaminhar</strong> a requisição antes que ela chegue ao
+            destino final.
+          </p>
+          <h4>📌 Definição:</h4>
+          <p>
+            Um <strong>middleware</strong> é uma função que
+            <strong>intercepta</strong> a requisição antes dela chegar à rota
+            final. Podendo assim:
+          </p>
+          <ul>
+            <li>Modificar a requisição ou a resposta.</li>
+            <li>Bloquear o acesso caso não cumpra algum critério.</li>
+            <li>Registrar logs e métricas.</li>
+            <li>Adicionar informações extras na requisição</li>
+          </ul>
+          <p>
+            Ele e utilizada principalmente quando houver a nessecidade de
+            executar um mesmo trexo de código em multiplas rotas.
+          </p>
+        </div>
 
-        <!-- Modal: Em produção... -->
+        <!-- Modal -->
         <div>
           <h4>
-            <button id="openModal">
-              <i>➕</i> Uma middleware e composta por:
+            <button id="openModal" class="openModal">
+              &#65291; Uma middleware e composta por: 
             </button>
           </h4>
 
           <div id="modal" class="modal">
             <div class="modal-content">
-              <span class="close"><i>❌</i></span>
+              <span class="close">&times;</span>
               <h2>Uma middleware e composta por:</h2>
               <ul>
                 <li>function functionName(request, response, next):</li>
@@ -857,6 +869,7 @@ code_text">app.use((err, req, res, next) => {
       </p>
     </footer>
 
+    <script src="../style/js/modal.js"></script>
     <script src="../style/js/openDetails.js"></script>
     <script src="../style/js/toggleTheme.js"></script>
   </body>
