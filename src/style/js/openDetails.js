@@ -1,16 +1,16 @@
-const details = document.querySelectorAll('details');
-let openDetails = [];
+const details = document.querySelectorAll("details")
+let openDetails = []
 
-details.forEach(detail => {
-  detail.addEventListener('toggle', () => {
+details.forEach((detail) => {
+  detail.addEventListener("toggle", () => {
     if (detail.open) {
-      openDetails.push(detail);
+      openDetails.push(detail)
       if (openDetails.length > 2) {
-        openDetails[0].open = false;
-        openDetails.shift();
+        openDetails[0].open = false
+        openDetails.shift()
       }
     } else {
-      openDetails = openDetails.filter(d => d !== detail);
+      openDetails = openDetails.filter((d) => d !== detail)
     }
-  });
-});
+  })
+})

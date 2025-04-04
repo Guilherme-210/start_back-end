@@ -260,7 +260,7 @@ ul {
 /* Estilização da modal */
 .openModal {
   background-color: var(--code-background-color);
-  color: var(----code-color);
+  color: var(--code-color);
   border: none !important;
   font-size: large;
 }
