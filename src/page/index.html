@@ -53,7 +53,9 @@
       </fieldset>
 
       <fieldset>
-        <legend>🌐 Métodos HTTP: Entendendo as Requisições na Web</legend>
+        <legend>
+          <i>🌐</i> Métodos HTTP: Entendendo as Requisições na Web <i>🌐</i>
+        </legend>
         <p>
           Quando navegamos na internet ou interagimos com <strong>APIs</strong>,
           usamos os métodos <strong>HTTP</strong> para comunicar com o back-end.
@@ -64,13 +66,13 @@
 
         <details>
           <summary>1. GET - Buscar Informações</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>Solicita dados do servidor, mas não altera nada.</li>
-            <li>Como abrir um site ou buscar dados de uma API.</li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Solicita dados do servidor, mas não altera nada.</li>
+              <li>Como abrir um site ou buscar dados de uma API.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -88,23 +90,23 @@ app.get("/projects", (request, response) => {
   return response.json(["projeto 1", "projeto 2"])
 })</code></pre>
             </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Consultar listas de usuários, produtos, artigos etc.</li>
+              <li>Buscar informações sem modificar nada no servidor.</li>
+            </ul>
           </div>
-          <h4>💡 Usado para:</h4>
-          <ul class="list_check">
-            <li>Consultar listas de usuários, produtos, artigos etc.</li>
-            <li>Buscar informações sem modificar nada no servidor.</li>
-          </ul>
         </details>
 
         <details>
           <summary>2. POST - Criar um Novo Registro</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>Envia dados para o servidor para criar um novo recurso.</li>
-            <li>Diferente do GET, pode modificar os dados no servidor.</li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Envia dados para o servidor para criar um novo recurso.</li>
+              <li>Diferente do GET, pode modificar os dados no servidor.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -130,13 +132,13 @@ code_text">app.post("/projects", (request, response) => {
 
         <details>
           <summary>3. PUT - Atualizar um Registro (Completo)</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>Atualiza toda a informação de um recurso existente.</li>
-            <li>Se algum campo estiver ausente, ele pode ser apagado</li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Atualiza toda a informação de um recurso existente.</li>
+              <li>Se algum campo estiver ausente, ele pode ser apagado</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -162,15 +164,15 @@ code_text">app.put("/projects/:id", (request, response) => {
 
         <details>
           <summary>4. PATCH - Atualizar um Registro (Parcial)</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>Atualiza apenas campos específicos de um recurso.</li>
-            <li>
-              Diferente do PUT, os campos não enviados continuam inalterados
-            </li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Atualiza apenas campos específicos de um recurso.</li>
+              <li>
+                Diferente do PUT, os campos não enviados continuam inalterados
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -196,12 +198,12 @@ code_text">app.patch("/projects/:id", (request, response) => {
 
         <details>
           <summary>5. DELETE - Apagar um Registro</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>Remove um recurso do servidor permanentemente.</li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Remove um recurso do servidor permanentemente.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -263,7 +265,9 @@ code_text">app.delete("/projects/:id", (request, response) => {
       </fieldset>
 
       <fieldset>
-        <legend>🏷 Tipos de Parâmetros em Requisições HTTP</legend>
+        <legend>
+          <i>🏷️</i> Tipos de Parâmetros em Requisições HTTP <i>🏷️</i>
+        </legend>
         <p>
           Quando fazemos requisições para APIs, precisamos passar informações
           para o servidor. Existem três formas principais de enviar esses dados:
@@ -271,19 +275,19 @@ code_text">app.delete("/projects/:id", (request, response) => {
 
         <details>
           <summary>1. Query Params (Parâmetros de Consulta)</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>
-              Passados na <strong>URL</strong> após o <code>?</code> e separados
-              por <code>&</code>.
-            </li>
-            <li>
-              Usados para <strong>filtrar</strong>, <strong>ordenar</strong> ou
-              <strong>paginar</strong> resultados
-            </li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>
+                Passados na <strong>URL</strong> após o <code>?</code> e
+                separados por <code>&</code>.
+              </li>
+              <li>
+                Usados para <strong>filtrar</strong>,
+                <strong>ordenar</strong> ou <strong>paginar</strong> resultados
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -314,25 +318,25 @@ code_text">app.get("/projects", (request, response) => {
               <pre class="code_block"><code id="
 code_text">http://localhost:3333/projects?title=React&owner=Guilherme</code></pre>
             </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Filtros em listas (ex: Titulo equivalente a "React").</li>
+              <li>Paginação (?title=React&owner=Guilherme).</li>
+            </ul>
           </div>
-          <h4>💡 Usado para:</h4>
-          <ul class="list_check">
-            <li>Filtros em listas (ex: Titulo equivalente a "React").</li>
-            <li>Paginação (?title=React&owner=Guilherme).</li>
-          </ul>
         </details>
 
         <details>
           <summary>2. Route Params (Parâmetros de Rota)</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>Fazem parte da <strong>URL</strong>, sem <code>?</code>.</li>
-            <li>
-              Usados para identificar <strong>um recurso específico</strong>.
-            </li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Fazem parte da <strong>URL</strong>, sem <code>?</code>.</li>
+              <li>
+                Usados para identificar <strong>um recurso específico</strong>.
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -362,35 +366,35 @@ code_text">app.put("/projects/:id", (request, response) => {
                   <button class="copy_btn">📋 Copiar</button>
                   <button class="edit_btn">✏️ Editar</button>
                 </div>
+                <pre class="code_block"><code id="
+                  code_text">http://localhost:3333/projects/1?</code></pre>
               </div>
-              <pre class="code_block"><code id="
-code_text">http://localhost:3333/projects/1?</code></pre>
             </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Buscar uma rota específica (/projects/1).</li>
+            </ul>
           </div>
-          <h4>💡 Usado para:</h4>
-          <ul class="list_check">
-            <li>Buscar uma rota específica (/projects/1).</li>
-          </ul>
         </details>
 
         <details>
           <summary>3. Request Body (Corpo da Requisição)</summary>
-          <h4>📌 O que faz?</h4>
-          <ul>
-            <li>
-              <strong>Não vai na URL</strong>! É enviado no
-              <strong>corpo da requisição</strong>.
-            </li>
-            <li>
-              Usado para <strong>enviar dados complexos</strong>, como JSON.
-            </li>
-            <li>
-              Exige métodos como <code>POST</code>, <code>PUT</code> ou
-              <code>PATCH</code>.
-            </li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>
+                <strong>Não vai na URL</strong>! É enviado no
+                <strong>corpo da requisição</strong>.
+              </li>
+              <li>
+                Usado para <strong>enviar dados complexos</strong>, como JSON.
+              </li>
+              <li>
+                Exige métodos como <code>POST</code>, <code>PUT</code> ou
+                <code>PATCH</code>.
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <p>
               Por padrão o <strong>express</strong> não interpreta o que vai ser
               enviado para ele no formato json. Então para falarmos para o
@@ -437,11 +441,11 @@ code_text">{
   "idade": 27
 }</code></pre>
             </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Criar usuários, enviar formulários, atualizar informações</li>
+            </ul>
           </div>
-          <h4>💡 Usado para:</h4>
-          <ul class="list_check">
-            <li>Criar usuários, enviar formulários, atualizar informações</li>
-          </ul>
         </details>
       </fieldset>
 
@@ -500,48 +504,97 @@ code_text">{
       </fieldset>
 
       <fieldset>
-        <legend>🛑 Middleware: O Interceptador de Requisições 🛑</legend>
+        <legend>
+          <i>🛑</i> Middleware: O Interceptador de Requisições <i>🛑</i>
+        </legend>
         <p>
           O <strong>middleware</strong> é como um segurança que fica no meio do
-          caminho entre a requisição do cliente e a resposta do servidor. Ele
-          pode <strong>modificar</strong>, <strong>bloquear</strong> ou
+          caminho entre a requisição do cliente e a resposta do servidor.
+        </p>
+        <p>
+          Ele pode <strong>modificar</strong>, <strong>bloquear</strong> ou
           <strong>encaminhar</strong> a requisição antes que ela chegue ao
           destino final.
         </p>
+        <h4>📌 Definição:</h4>
+        <p>
+          Um <strong>middleware</strong> é uma função que
+          <strong>intercepta</strong> a requisição antes dela chegar à rota
+          final. Podendo assim:
+        </p>
+        <ul>
+          <li>Modificar a requisição ou a resposta.</li>
+          <li>Bloquear o acesso caso não cumpra algum critério.</li>
+          <li>Registrar logs e métricas.</li>
+          <li>Adicionar informações extras na requisição</li>
+        </ul>
+        <p>
+          Ele e utilizada principalmente quando houver a nessecidade de executar
+          um mesmo trexo de código em multiplas rotas.
+        </p>
 
-        <details>
-          <summary>O que é um Middleware?</summary>
-          <h4>📌 Definição:</h4>
-          <p>
-            Um <strong>middleware</strong> é uma função que
-            <strong>intercepta</strong> a requisição antes dela chegar à rota
-            final. Ele pode:
-          </p>
-          <ul>
-            <li>Modificar a requisição ou resposta.</li>
-            <li>Bloquear o acesso caso não cumpra algum critério.</li>
-            <li>Registrar logs e métricas.</li>
-            <li>Adicionar informações extras na requisição</li>
-          </ul>
-          <h4>📌 Fluxo da Requisição com Middleware:</h4>
-          <div class="div_details">
-            <div class="code_container">
-              <div class="code_header">
-                <span class="code_title">index.js</span>
-                <div class="code_actions">
-                  <button class="copy_btn">📋 Copiar</button>
-                  <button class="edit_btn">✏️ Editar</button>
-                </div>
-              </div>
-              <pre
-                class="code_block"
-              >[ Cliente ] → [ Middleware 1 ] → [ Middleware 2 ] → [ Rota Final ]<code id="
-code_text"></code></pre>
+        <!-- Modal: Em produção... -->
+        <div>
+          <h4>
+            <button id="openModal">
+              <i>➕</i> Uma middleware e composta por:
+            </button>
+          </h4>
+
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close"><i>❌</i></span>
+              <h2>Uma middleware e composta por:</h2>
+              <ul>
+                <li>function functionName(request, response, next):</li>
+                <ul>
+                  <li>
+                    <strong>request</strong>: Este é um objeto que contém
+                    informações sobre a requisição HTTP que o servidor recebeu.
+                    Isso inclui coisas como o método HTTP (<code>GET</code>,
+                    <code>POST</code>, <code>PUT</code>, <code>DELETE</code>,
+                    etc.), a URL solicitada, os headers da requisição, o corpo
+                    da requisição (se houver), e muito mais.
+                  </li>
+                  <li>
+                    <strong>response</strong>: Este é um objeto que você usa
+                    para enviar uma resposta de volta ao cliente que fez a
+                    requisição. Ele permite definir o status code da resposta,
+                    os headers da resposta, e o corpo da resposta.
+                  </li>
+                  <li>
+                    <strong>next</strong>: Esta é uma função muito importante.
+                    Quando um middleware termina de executar sua lógica, ele
+                    precisa chamar a função <code>next()</code> para passar o
+                    controle para o próximo middleware na cadeia ou para a rota
+                    final que irá lidar com a requisição. Se
+                    <code>next()</code> não for chamado, a requisição ficará
+                    "presa" no middleware e a resposta nunca será enviada.
+                  </li>
+                </ul>
+              </ul>
             </div>
           </div>
-          <h3>📜 Exemplo de Middleware no Express.js</h3>
-          <h4>📌 Criando um middleware que loga todas as requisições:</h4>
+        </div>
+
+        <details>
+          <summary>Fluxo da Requisição com Middleware</summary>
+
+          <div class="code_container">
+            <pre
+              class="code_block"
+            >[ Cliente ] → [ Middleware 1 ] → [ Middleware 2 ] → [ Rota Final ]<code id="
+code_text"></code></pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Exemplos de como criar Middlewares</summary>
           <div class="div_details">
+            <h4>
+              📌 Criando um middleware que registrar informações sobre cada
+              requisições recebidas:
+            </h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -551,40 +604,81 @@ code_text"></code></pre>
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">const express = require("express");
-const app = express();
+code_text">function logRequests(request, response, next) {
+  const { method, url } = request
 
-// Middleware que exibe informações da requisição
-app.use((req, res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-  next(); // Chama o próximo middleware ou rota
-});
+  const logLabel = `[${method.toUpperCase()}] ${url}`
 
-// Rota de exemplo
-app.get("/", (req, res) => {
-  res.send("Middleware funcionando!");
-});
+  console.log(logLabel)
 
-app.listen(3000, () => console.log("Servidor rodando na porta 3000"));</code></pre>
+  console.time("logLabel")
+
+  next()
+
+  console.timeEnd("logLabel")
+}</code></pre>
             </div>
+            <h4>💡 Em resumo, o que esse middleware faz é:</h4>
+            <ul class="list_check">
+              <li>
+                <strong
+                  >Registrar informações sobre cada requisição recebida</strong
+                >: Ele loga o método HTTP e a URL da requisição no console.
+              </li>
+              <li>
+                <strong>Medir o tempo de processamento da requisição</strong>:
+                Ele inicia um cronômetro antes de passar o controle para o
+                próximo middleware/rota e para o cronômetro depois que a rota e
+                quaisquer middlewares subsequentes terminarem de executar. Isso
+                ajuda a identificar possíveis gargalos de desempenho na sua
+                aplicação.
+              </li>
+              <li>
+                <strong>Passar o controle adiante</strong>: Ao chamar
+                <code>next()</code>, ele garante que a requisição continue seu
+                fluxo normal através da sua aplicação.
+              </li>
+            </ul>
+            <h4>📌 Criando um middleware que executa a validação do ID:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">function validateProjectID(request, response, next) {
+  const { id } = request.params
+  console.log("1")
+
+  if (!isUuid(id)) {
+    return response.status(400).json({ error: "Invalid project ID." })
+  }
+
+  return next()
+}</code></pre>
+            </div>
+            <h4>💡 Em resumo, o que esse middleware faz é:</h4>
+            <ul class="list_check">
+              <li>
+                Se o <code>id</code> não for um <strong>UUID</strong> válido,
+                uma resposta de erro 400 é enviada e a função retorna, impedindo
+                a chamada de <code>next()</code>.
+              </li>
+              <li>
+                Se o <code>id</code> for um <strong>UUID</strong> válido, o
+                middleware simplesmente chama <code>next()</code>, permitindo
+                que a requisição continue para a próxima função na cadeia (que
+                provavelmente será a rota que realmente busca ou manipula o
+                projeto com o ID fornecido).
+              </li>
+            </ul>
           </div>
-          <h4>💡 O que acontece aqui?</h4>
-          <ul class="list_check">
-            <li>
-              Toda requisição <strong>passa primeiro pelo middleware</strong>.
-            </li>
-            <li>
-              Ele exibe a data, método (<code>GET</code>, <code>POST</code>,
-              etc.) e URL da requisição.
-            </li>
-            <li>
-              Depois, o <code>next()</code> permite que a requisição continue
-              até a rota final.
-            </li>
-          </ul>
         </details>
 
-        <h3>📜 Tipos de Middleware</h3>
+        <h3>📜 Metodos de uso para um Middleware!</h3>
         <p>
           Os middlewares podem ter diferentes funções, dependendo do que
           queremos fazer:
@@ -592,11 +686,11 @@ app.listen(3000, () => console.log("Servidor rodando na porta 3000"));</code></p
 
         <details>
           <summary>1. Middleware Global</summary>
-          <ul>
-            <li>Aplica-se a todas as requisições.</li>
-            <li>Exemplo: Registro de logs, CORS, parsing de JSON.</li>
-          </ul>
           <div class="div_details">
+            <ul>
+              <li>Aplica-se a todas as requisições.</li>
+              <li>Exemplo: Registro de logs, CORS, parsing de JSON.</li>
+            </ul>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -606,19 +700,43 @@ app.listen(3000, () => console.log("Servidor rodando na porta 3000"));</code></p
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">app.use(express.json()); // Middleware para interpretar JSON</code></pre>
+code_text">// Sem rota especifica
+function logRequests(request, response, next) {...} 
+
+app.use(logRequests)
+
+// Rota sendo especificada
+
+app.use("/projects/:id", logRequests)</code></pre>
             </div>
+            <h4>💡 O que acontece aqui?</h4>
+            <ol>
+              <li>
+                Nese metodo nos temos o middleware sendo usado da seguinte forma
+                utiliza o <code>app.use(logRequests)</code> para executar sempre
+                que houver alguma requisição, sendo aplicado em qualquer rota.
+              </li>
+              <li>
+                Nese metodo nos temos o middleware sendo aplicado em uma rota
+                especifica,<code>app.use("/projects/:id", logRequests)</code>.
+              </li>
+              <li>
+                Em ambos os metodos pode ser aplicado mais de uma Middleware no
+                momento da chamada, as separando por uma virgula(<code>,</code>)
+                no momento da chamada.
+              </li>
+            </ol>
           </div>
         </details>
 
         <details>
           <summary>2. Middleware de Rota Específica</summary>
-          <ul>
-            <li>Funciona apenas em determinadas rotas.</li>
-            <li>Exemplo: Autenticação antes de acessar uma área restrita.</li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <ul>
+              <li>Funciona apenas em determinadas rotas.</li>
+              <li>Exemplo: Autenticação antes de acessar uma área restrita.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -628,28 +746,31 @@ code_text">app.use(express.json()); // Middleware para interpretar JSON</code></
                 </div>
               </div>
               <pre class="code_block"><code id="
-code_text">const checkAuth = (req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(401).json({ error: "Acesso negado!" });
-  }
-  next();
-};
+code_text">function logRequests(request, response, next) {...}
+function validateProjectID(request, response, next) {...}
 
-app.get("/admin", checkAuth, (req, res) => {
-  res.send("Bem-vindo à área administrativa!");
-});</code></pre>
+app.use("/projects/:id", logRequests, validateProjectID)</code></pre>
             </div>
+            <h4>💡 O que acontece aqui?</h4>
+            <p>
+              Nese metodo nos temos o middleware sendo aplicado dentro de uma
+              rota específica, podendo ser aplicado mais de uma middleware para
+              a rota chamada
+              <code
+                >app.use("/projects/:id", logRequests, validateProjectID)</code
+              >.
+            </p>
           </div>
         </details>
 
         <details>
           <summary>3. Middleware de Tratamento de Erros</summary>
-          <ul>
-            <li>Captura e lida com erros nas requisições.</li>
-            <li>Deve ter quatro parâmetros (err, req, res, next).</li>
-          </ul>
-          <h4>📌 Exemplo:</h4>
           <div class="div_details">
+            <ul>
+              <li>Captura e lida com erros nas requisições.</li>
+              <li>Deve ter quatro parâmetros (err, req, res, next).</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
             <div class="code_container">
               <div class="code_header">
                 <span class="code_title">index.js</span>
@@ -683,12 +804,18 @@ code_text">app.use((err, req, res, next) => {
               <tr>
                 <td><strong>Global</strong></td>
                 <td>Aplica-se a todas as requisições</td>
-                <td><code>app.use(express.json())</code></td>
+                <td>
+                  <code>app.use(logRequests)</code> e
+                  <code>app.use(logRequests, validateProjectID)</code>
+                </td>
               </tr>
               <tr>
                 <td><strong>Rota Específica</strong></td>
                 <td>Funciona apenas em algumas rotas</td>
-                <td><code>app.get("/admin", checkAuth, ...)</code></td>
+                <td>
+                  <code>app.delete("/projects/:id", checkAuth, ...)</code> e
+                  <code>app.use("/projects/:id", validateProjectID, ...)</code>
+                </td>
               </tr>
               <tr>
                 <td><strong>Erro</strong></td>
