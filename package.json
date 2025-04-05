@@ -1,10 +1,10 @@
 {
   "name": "start",
   "version": "1.0.0",
-  "main": "src/script.js",
+  "main": "src/js/script.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/script.js"
+    "dev": "nodemon src/js/script.js"
   },
   "dependencies": {
     "express": "^4.21.2",
