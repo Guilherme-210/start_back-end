@@ -163,9 +163,19 @@ app.put("/form/:id", validateProjectID, (request, response) => {
   return response.json(user)
 })
 
-/**
-app.delete("/form/:id", validateProjectID, (request, response) => {})
-  */
+app.delete("/form/:id", validateProjectID, (request, response) => {
+  const { id } = request.params
+
+  const userIndex = users.findIndex((user) => user.id === id)
+
+  if (userIndex < 0) {
+    return response.status(400).json({ error: "project not found." })
+  }
+
+  users.splice(userIndex, 1)
+
+  return response.status(204).find()
+})
 
 app.listen(3334, () => {
   console.log("back-end form started! 🚀")
