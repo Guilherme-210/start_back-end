@@ -1,18 +1,6 @@
 const express = require("express")
 const { uuid, isUuid } = require("uuidv4")
 
-/**
-import validateName from "./script/name.js"
-import { validateCpfCnpj, formatCpfCnpj } from "./script/cpfCnpj.js"
-import {
-  formatDDI,
-  formatCellphone,
-  validateCellphone,
-} from "./script/cellphone.js"
-import validateEmail from "./script/email.js"
-import validatePassword from "./script/password.js"
- */
-
 const app = express()
 
 app.use(express.json())
@@ -174,7 +162,7 @@ app.delete("/form/:id", validateProjectID, (request, response) => {
 
   users.splice(userIndex, 1)
 
-  return response.status(204).find()
+  return response.status(204).send()
 })
 
 app.listen(3334, () => {
