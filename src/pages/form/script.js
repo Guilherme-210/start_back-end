@@ -1,6 +1,18 @@
 const express = require("express")
 const { uuid, isUuid } = require("uuidv4")
 
+/**
+import validateName from "./script/name.js"
+import { validateCpfCnpj, formatCpfCnpj } from "./script/cpfCnpj.js"
+import {
+  formatDDI,
+  formatCellphone,
+  validateCellphone,
+} from "./script/cellphone.js"
+import validateEmail from "./script/email.js"
+import validatePassword from "./script/password.js"
+ */
+
 const app = express()
 
 app.use(express.json())
@@ -19,6 +31,17 @@ function logRequests(request, response, next) {
   next()
 
   console.timeEnd("logLabel")
+}
+
+function validateProjectID(request, response, next) {
+  const { id } = request.params
+  console.log("1")
+
+  if (!isUuid(id)) {
+    return response.status(400).json({ error: "Invalid project ID." })
+  }
+
+  return next()
 }
 
 app.use(logRequests)
@@ -83,6 +106,66 @@ app.post("/form", (request, response) => {
 
   return response.json(user)
 })
+
+app.put("/form/:id", validateProjectID, (request, response) => {
+  const { id } = request.params
+  const {
+    firstName,
+    lastName,
+    CPF_CNPJ,
+    countryCode,
+    cellphone,
+    email,
+    birthDate,
+    gender,
+    country,
+    state,
+    city,
+    CEP,
+    district,
+    address,
+    addressNumber,
+    Complement,
+    senha,
+    confirmSenha,
+  } = request.body
+
+  const userIndex = users.findIndex((user) => user.id === id)
+
+  if (userIndex < 0) {
+    return response.status(400).json({ error: "project not found." })
+  }
+
+  const user = {
+    id,
+    firstName,
+    lastName,
+    CPF_CNPJ,
+    countryCode,
+    cellphone,
+    email,
+    birthDate,
+    gender,
+    country,
+    state,
+    city,
+    CEP,
+    district,
+    address,
+    addressNumber,
+    Complement,
+    senha,
+    confirmSenha,
+  }
+
+  users[userIndex] = user
+
+  return response.json(user)
+})
+
+/**
+app.delete("/form/:id", validateProjectID, (request, response) => {})
+  */
 
 app.listen(3334, () => {
   console.log("back-end form started! 🚀")
