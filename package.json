@@ -4,7 +4,8 @@
   "main": "src/js/script.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/js/script.js"
+    "dev": "nodemon src/js/script.js",
+    "dev-form": "nodemon src/pages/form/script.js"
   },
   "dependencies": {
     "express": "^4.21.2",
