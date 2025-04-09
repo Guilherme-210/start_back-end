@@ -22,7 +22,7 @@ document.getElementById("submit").addEventListener("click", async () => {
   }
 
   try {  
-    const response = await fetch("http://192.168.0.6:3334/form", {
+    const response = await fetch("http://localhost/:3334/form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
