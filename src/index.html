@@ -29,7 +29,9 @@
   <body data-theme="dark">
     <header>
       <nav>
-        <a class="nav_pages" href="./pages/form/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="./pages/form/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Back-end com NodeJS</h1>
@@ -76,7 +78,7 @@
           </ol>
         </div>
       </fieldset>
-
+      
       <fieldset>
         <legend>
           <i>🌐</i> Métodos HTTP: Entendendo as Requisições na Web <i>🌐</i>
@@ -252,7 +254,7 @@ code_text">app.delete("/projects/:id", (request, response) => {
           </div>
         </details>
       </fieldset>
-
+      
       <fieldset class="fieldset_table">
         <legend>🚀 Conclusão</legend>
         <div class="div_table">
@@ -288,7 +290,7 @@ code_text">app.delete("/projects/:id", (request, response) => {
           </table>
         </div>
       </fieldset>
-
+      
       <fieldset>
         <legend>
           <i>🏷️</i> Tipos de Parâmetros em Requisições HTTP <i>🏷️</i>
@@ -473,7 +475,7 @@ code_text">{
           </div>
         </details>
       </fieldset>
-
+      
       <fieldset class="fieldset_table">
         <legend>🚀 Conclusão</legend>
         <div class="div_table">
@@ -530,6 +532,334 @@ code_text">{
 
       <fieldset>
         <legend>
+          <i>🧾</i> Lista esperta dos response.status(n) mais comuns: <i>🧾</i>
+        </legend>
+        <p></p>
+
+        <details>
+          <summary>
+            1. (1xx) – Informativos (quase nunca usados no back-end do dia a
+            dia)
+          </summary>
+          <div class="div_details">
+            <p>
+              🔧 Ex: <code>100 Continue</code> → usado por navegadores e
+              servidores pra saber se devem continuar a requisição.
+            </p>
+            <p>
+              👉<strong>
+                Você quase nunca vai usar. Bora pro que interessa.</strong
+              >
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            2. (2xx) – Sucesso (Usado para expressar êxito na requisição)
+          </summary>
+          <div class="div_details">
+            <h3>📌 200 OK:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Requisição foi processada com sucesso.</li>
+              <li>
+                🧠 Usa quando: você quer responder com dados ou mensagens
+                normais.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(200).json({ msg: "Usuário encontrado!" })</code></pre>
+            </div>
+
+            <h3>📌 201 Created:</h3>
+            <ul class="list_explicative">
+              <li>
+                🔸 Algo foi criado com sucesso (ex: novo usuário, post,
+                comentário...).
+              </li>
+              <li>🧠 Usa quando: um novo recurso é criado com POST.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(201).json({ msg: "Usuário criado!" })</code></pre>
+            </div>
+
+            <h3>📌 204 No Content:</h3>
+            <ul class="list_explicative">
+              <li>
+                🔸 Requisição bem-sucedida, mas sem conteúdo pra retornar.
+              </li>
+              <li>
+                🧠 Usa quando: deleta algo ou atualiza e não precisa responder
+                com dados.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(204).send()</code></pre>
+            </div>
+
+            <div class="fieldset_table">
+              <div class="div_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Significado</th>
+                      <th>Quando usar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>200</td>
+                      <td>OK</td>
+                      <td>
+                        Quando uma requisição foi processada com sucesso (GET,
+                        PUT)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>201</td>
+                      <td>Created</td>
+                      <td>
+                        Quando você cria algo com sucesso (POST, por exemplo)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>204</td>
+                      <td>No Content</td>
+                      <td>
+                        Quando deu tudo certo, mas não tem nada pra retornar
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            3. (3xx) – Redirecionamentos (mais comuns no front ou servidores
+            como o Nginx)
+          </summary>
+          <div class="div_details">
+            <ul class="list_explicative">
+              <li>
+                Ex: <code>301 Moved Permanently</code>, <code>302 Found</code>
+              </li>
+              <li>
+                🧠 Quase nunca usados no Express diretamente. Quando precisar
+                redirecionar, pode usar:
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">response.redirect("/nova-pagina")</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            4. (4xx) – Erro do cliente (o famoso "foi você que errou , não o
+            servidor")
+          </summary>
+          <div class="div_details">
+            <h3>📌 400 Bad Request:</h3>
+            <ul class="list_explicative">
+              <li>🔸 A requisição veio errada ou malformada.</li>
+              <li>
+                🧠 Usa quando: dados estão inválidos, campos faltando, etc.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(400).json({ error: "Nome é obrigatório." })</code></pre>
+            </div>
+
+            <h3>📌 401 Unauthorized:</h3>
+            <ul class="list_explicative">
+              <li>🔸 O cliente não está autenticado.</li>
+              <li>
+                🧠 Usa quando: precisa de login/autenticação (JWT, token, etc).
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(401).json({ error: "Você precisa estar logado." })</code></pre>
+            </div>
+
+            <h3>📌 403 Forbidden:</h3>
+            <ul class="list_explicative">
+              <li>🔸 O cliente está logado, mas não tem permissão.</li>
+              <li>
+                🧠 Usa quando: usuário tenta acessar algo que ele não pode.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(403).json({ error: "Acesso negado." })</code></pre>
+            </div>
+
+            <h3>📌 404 Not Found:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Recurso não encontrado.</li>
+              <li>🧠 Usa quando: o ID não existe, rota errada, etc.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(403).json({ error: "Acesso negado." })</code></pre>
+            </div>
+
+            <h3>📌 409 Conflict:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Conflito de dados (ex: registro já existe).</li>
+              <li>🧠 Usa quando: email já cadastrado, CPF duplicado, etc.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(404).json({ error: "Usuário não encontrado." })</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            5. (5xx) – Erros do servidor (a culpa agora é nossa &#128517;)
+          </summary>
+          <div class="div_details">
+            <h3>📌 500 Internal Server Error:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Erro interno do servidor. Algo deu ruim.</li>
+              <li>🧠 Usa quando: estoura uma exceção, erro desconhecido.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(500).json({ error: "Erro inesperado no servidor." })</code></pre>
+            </div>
+
+            <h3>
+              📌 <code>502 Bad Gateway</code>,
+              <code>503 Service Unavailable</code>,
+              <code>504 Gateway Timeout</code>:
+            </h3>
+            <ul class="list_explicative">
+              <li>
+                🔸 Problemas de infraestrutura (outro serviço caiu, servidor
+                ocupado, etc).
+              </li>
+              <li>
+                🧠 Mais comuns em apps maiores com múltiplos serviços (tipo
+                microserviços).
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            6. 🔥 Dica Ninja:
+          </summary>
+          <div class="div_details">
+            <h3>Você pode criar um padrão no seu back-end tipo assim:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">if (!user) {
+  return response.status(404).json({ error: "Usuário não encontrado" })
+}
+
+if (!email || !senha) {
+  return response.status(400).json({ error: "Campos obrigatórios" })
+}
+
+return response.status(200).json({ msg: "Usuário logado com sucesso!" })</code></pre>
+            </div>
+          </div>
+        </details>
+      </fieldset>
+      
+      <fieldset>
+        <legend>
           <i>🛑</i> Middleware: O Interceptador de Requisições <i>🛑</i>
         </legend>
         <div>
@@ -560,7 +890,6 @@ code_text">{
           </p>
         </div>
 
-        <!-- Modal -->
         <div>
           <h4>
             <button id="openModal" class="openModal">
@@ -815,7 +1144,7 @@ code_text">app.use((err, req, res, next) => {
           </div>
         </details>
       </fieldset>
-
+      
       <fieldset class="fieldset_table">
         <legend>🚀 Conclusão</legend>
         <div class="div_table">
